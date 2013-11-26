@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang="zh" lang="zh">
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>看电影</title>
+    <!--<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css" type="text/css">-->
+    <link href="/css/style.css" rel="stylesheet">
+    <script src='http://code.jquery.com/jquery-latest.js'></script>
+</head>
+<script>
+</script>
+<body>
+<div class='header container'>
+    <div class="top clear">
+        <div class="logo left">
+            <a href="#" title="看电影" ><img src="http://www.51rrkan.com/Tpl/51rrkan_v2.0/images/logo.png" alt="看电影"></a>
+        </div>
+        <div class="search left">
+            <form id="search_form" action="/search" method="post" target="_blank">
+                    <div>
+                        <input class="txt" type="text" name="keyword" placeholder="输入影片、导演或演员名 多个搜索请用空格分开">
+                    </div>
+                    <input class="btn" type="submit" value="" title="搜索">
+                    <label class="hot small">
+                        <a href="" >咱们结婚吧</a>
+                        <a href="">雷神2</a>
+                        <a href="">金蝉脱壳</a>
+                        <a href="">金蝉脱壳</a>
+                        <a href="">金蝉脱壳</a>                          
+                    </label>
+                    <span class="icon_common icon_search"></span>
+                </form>
+        </div>
+        <div class="user_info right">
+            
+            <div class="clear">
+                <div class="user_nav">
+                    <a  href="javascript:;" >播放记录</a>
+                    <em>|</em>
+                    <a onclick="addFavorite(this.href, 'xxx');return false;" href="javascript:;">收藏本站</a>
+                    <em>|</em>
+                    <a onclick="setHomepage('xxx');" href="javascript:;">设为首页</a>
+                </div>
+                <div class="panel">
+                    <div> 
+                        <div> 
+                            <div class="records_list"> 
+                                <div class="records_header"><a href="#" target="_blank">管理观看记录</a></div>      
+                                <div class="records_items mb30"> 
+                                    <h4 class="mb10"><span>更 早</span></h4> 
+                                    <ul> 
+                                        <li> 
+                                            <span class="r_title">
+                                                <a href="#" title="性爱大师 05" target="_blank">性爱大师</a>
+                                                <a href="#" target="_blank" class="r_update">[更新至9集]</a>
+                                            </span> 
+                                            <span class="r_stat">看到5集的40% </span> 
+                                            <span class="r_action">
+                                                <a href="#" target="_blank">继续看</a>   
+                                            </span> 
+                                            <span class="r_del" title="删除"></span> 
+                                        </li>  
+                                        <li> 
+                                            <span class="r_title">
+                                                <a href="#" title="性爱大师 05" target="_blank">性爱大师</a>
+                                                <a href="#" target="_blank" class="r_update">[更新至9集]</a>
+                                            </span> 
+                                            <span class="r_stat">看到5集的40% </span> 
+                                            <span class="r_action">
+                                                <a href="#" target="_blank">继续看</a>   
+                                            </span> 
+                                            <span class="r_del" title="删除"></span> 
+                                        </li>  
+                                    </ul> 
+                                </div> 
+                                <div class="records_footer">
+                                    <a href="#" target="_blank">查看更多</a>
+                                </div>                                                            
+                            </div> 
+                            <div class="records_null" style="display:none;"> <span>你尚未看过任何视频</span> </div> 
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+                    <ul class="clear">
+                        <li class="curr">
+                            <a class="on" href="/" >首页</a>
+                        </li>
+                        <li>
+                            <a href="/" >电影</a>
+                        </li>
+                        <li>
+                            <a href="/" >电视剧</a>
+                        </li> 
+                        <li>
+                            <a href="/" >综艺</a>
+                        </li>
+                        <li>
+                            <a href="/" >动漫</a>
+                        </li>                        
+                        <li>
+                            <a href="/" >微电影</a>
+                        </li>
+                        <li>
+                            <a href="/" >直播</a>
+                        </li>
+                    </ul>
+    </div>
+    <div class="sub_nav clear">
+        <ul class="left">
+            <li class="impo"><em>|</em>电影</li>
+            <li><a href="/dzdy/">动作</a></li>
+            <li><a href="/xiju/">喜剧</a></li>
+            <li><a href="/aiqing/">爱情</a></li>
+            <li><a href="/khdy/">科幻</a></li>
+            <li><a href="/kongbu/">恐怖</a></li>
+            <li><a href="/juqing/">剧情</a></li>
+            <li><a href="/zainan/">灾难</a></li>
+            <li><a href="/xuanyi/">悬疑</a></li>
+            <li><a href="/mohuan/">魔幻</a></li>
+            <li><a href="/zhanzheng/">战争</a></li>
+            <li><a href="/jilu/">纪录</a></li>
+            <li><a href="/juchang/">动画</a></li>
+        </ul>
+        <ul class="right">
+            <li class="impo"><em>|</em>电视剧</li>
+            <li><a href="/guochan/">国产剧</a></li>
+            <li><a href="/xianggang/">香港剧</a></li>
+            <li><a href="/taiwan/">台湾剧</a></li>
+            <li><a href="/riben/">日本剧</a></li>
+            <li><a href="/hanguo/">韩国剧</a></li>
+            <li><a href="/omdsj/">欧美剧</a></li>
+            <li><a href="/taiguo/">泰国剧</a></li>
+            <li><a href="/yindu/">印度剧</a></li>
+        </ul>
+</div>
+</div>
+
+<div class="wrapper mb30 container">
+    <div class="hot_list clear">
+		<div class="left">
+			<ul class="img_block clear">
+                <li class="first">
+				    <a class="img_wrap" title="终结季终极B0SS将出现" href="#" target="_blank">
+							<img width="150" height="200" alt="终结季终极B0SS将出现" src="http://img.ffdy.cc/cs/250X350/35/f567607c1213d15192ce6f05ad2b22.jpg" onerror="javascript:this.src='#';">
+							<em class="tag meiju"></em>
+							<span class="notes left">				
+                                <em class="bg"></em><em class="text">至1集</em>															
+                            </span>
+					</a>
+					<p class="name"><span class="right"><em>8</em>.4</span><a title="终结季终极B0SS将出现" href="#" target="_blank">尼基塔第四季</a></p>
+					<p>主演：<a href="#" target="_blank">李美琪</a> <a href="#" target="_blank">夏恩·韦斯特</a> <a href="#" target="_blank">琳德西·冯塞卡</a> <a href="#" target="_blank">诺亚·比恩</a></p>
+					<p>上映：2013年11月23日</p>
+				</li>	
+                <li class="first">
+				    <a class="img_wrap" title="终结季终极B0SS将出现" href="#" target="_blank">
+							<img width="150" height="200" alt="终结季终极B0SS将出现" src="http://img.ffdy.cc/cs/250X350/35/f567607c1213d15192ce6f05ad2b22.jpg" onerror="javascript:this.src='#';">
+							<em class="tag meiju"></em>
+							<span class="notes left">				
+                                <em class="bg"></em><em class="text">至1集</em>															
+                            </span>
+					</a>
+					<p class="name"><span class="right"><em>8</em>.4</span><a title="终结季终极B0SS将出现" href="#" target="_blank">尼基塔第四季</a></p>
+					<p>主演：<a href="#" target="_blank">李美琪</a> <a href="#" target="_blank">夏恩·韦斯特</a> <a href="#" target="_blank">琳德西·冯塞卡</a> <a href="#" target="_blank">诺亚·比恩</a></p>
+					<p>上映：2013年11月23日</p>
+				</li>	
+                <li>
+				    <a class="img_wrap" title="终结季终极B0SS将出现" href="#" target="_blank">
+							<img width="150" height="200" alt="终结季终极B0SS将出现" src="http://img.ffdy.cc/cs/250X350/35/f567607c1213d15192ce6f05ad2b22.jpg" onerror="javascript:this.src='#';">
+							<em class="tag meiju"></em>
+							<span class="notes left">				
+                                <em class="bg"></em><em class="text">至1集</em>															
+                            </span>
+					</a>
+					<p class="name"><span class="right"><em>8</em>.4</span><a title="终结季终极B0SS将出现" href="#" target="_blank">尼基塔第四季</a></p>
+					<p>主演：<a href="#" target="_blank">李美琪</a> <a href="#" target="_blank">夏恩·韦斯特</a> <a href="#" target="_blank">琳德西·冯塞卡</a> <a href="#" target="_blank">诺亚·比恩</a></p>
+					<p>上映：2013年11月23日</p>
+				</li>					
+                <li>
+				    <a class="img_wrap" title="终结季终极B0SS将出现" href="#" target="_blank">
+							<img width="150" height="200" alt="终结季终极B0SS将出现" src="http://img.ffdy.cc/cs/250X350/35/f567607c1213d15192ce6f05ad2b22.jpg" onerror="javascript:this.src='#';">
+							<em class="tag meiju"></em>
+							<span class="notes left">				
+                                <em class="bg"></em><em class="text">至1集</em>															
+                            </span>
+					</a>
+					<p class="name"><span class="right"><em>8</em>.4</span><a title="终结季终极B0SS将出现" href="#" target="_blank">尼基塔第四季</a></p>
+					<p>主演：<a href="#" target="_blank">李美琪</a> <a href="#" target="_blank">夏恩·韦斯特</a> <a href="#" target="_blank">琳德西·冯塞卡</a> <a href="#" target="_blank">诺亚·比恩</a></p>
+					<p>上映：2013年11月23日</p>
+				</li>					
+                <li>
+				    <a class="img_wrap" title="终结季终极B0SS将出现" href="#" target="_blank">
+							<img width="150" height="200" alt="终结季终极B0SS将出现" src="http://img.ffdy.cc/cs/250X350/35/f567607c1213d15192ce6f05ad2b22.jpg" onerror="javascript:this.src='#';">
+							<em class="tag meiju"></em>
+							<span class="notes left">				
+                                <em class="bg"></em><em class="text">至1集</em>															
+                            </span>
+					</a>
+					<p class="name"><span class="right"><em>8</em>.4</span><a title="终结季终极B0SS将出现" href="#" target="_blank">尼基塔第四季</a></p>
+					<p>主演：<a href="#" target="_blank">李美琪</a> <a href="#" target="_blank">夏恩·韦斯特</a> <a href="#" target="_blank">琳德西·冯塞卡</a> <a href="#" target="_blank">诺亚·比恩</a></p>
+					<p>上映：2013年11月23日</p>
+				</li>					
+                <li>
+				    <a class="img_wrap" title="终结季终极B0SS将出现" href="#" target="_blank">
+							<img width="150" height="200" alt="终结季终极B0SS将出现" src="http://img.ffdy.cc/cs/250X350/35/f567607c1213d15192ce6f05ad2b22.jpg" onerror="javascript:this.src='#';">
+							<em class="tag meiju"></em>
+							<span class="notes left">				
+                                <em class="bg"></em><em class="text">至1集</em>															
+                            </span>
+					</a>
+					<p class="name"><span class="right"><em>8</em>.4</span><a title="终结季终极B0SS将出现" href="#" target="_blank">尼基塔第四季</a></p>
+					<p>主演：<a href="#" target="_blank">李美琪</a> <a href="#" target="_blank">夏恩·韦斯特</a> <a href="#" target="_blank">琳德西·冯塞卡</a> <a href="#" target="_blank">诺亚·比恩</a></p>
+					<p>上映：2013年11月23日</p>
+				</li>					
+            </ul>
+
+		</div>
+	</div>
+    
+    
+            <div class="tv cm clear">
+		<div class="res_wth left clear">
+			
+			<div class="clear">
+                <a class="h4_a left" href="/dianshiju/" target="_blank"><h4>电视剧</h4></a>
+				<div class="nav left">
+					<a class="curr" href="javascript:;" title="同步热播">同步热播</a>
+					<em>/</em>
+					<a title="香港剧" href="/xianggang/">香港剧</a>
+					<em>/</em>
+					<a title="韩国剧" href="/hanguo/">韩国剧</a>
+					<em>/</em>
+					<a title="欧美剧" href="/omdsj/">欧美剧</a>
+					<em>/</em>
+					<a title="抗战剧" href="/guochan/t_junshizhanzheng/">抗战剧</a>
+					<em>/</em>
+					<a title="新剧" href="/dianshiju/all/">新剧</a>
+					<em>/</em>
+					<a title="电视剧" href="/dianshiju/">更多</a>
+				</div>
+            </div>
+				<ul class="clear">
+                	 <li class="first top ">
+                            <a class="img_wrap" title="咱们结婚吧" href="/guochan/zaimenjiehunba/" target="_blank">
+                                <img width="135" height="180" src="http://pica.51rrkan.org/Uploads/vod/2013-11-19/528b2834e4734.jpg" alt="高圆圆回归银幕挑战恨嫁女" onerror="javascript:this.src='/Public/images/nophoto.jpg';">
+                                <span class="notes">
+								<em class="bg"></em>
+                                    <em class="text">至25集</em>                                                                </span>                               
+								<span class="name">咱们结婚吧</span>
+                            </a>
+                            <p>高圆圆回归银幕挑战恨嫁女</p>
+						</li> 	
+                    <li class="top ">
+                            <a class="img_wrap" title="咱们结婚吧" href="/guochan/zaimenjiehunba/" target="_blank">
+                                <img width="135" height="180" src="http://pica.51rrkan.org/Uploads/vod/2013-11-19/528b2834e4734.jpg" alt="高圆圆回归银幕挑战恨嫁女" onerror="javascript:this.src='/Public/images/nophoto.jpg';">
+                                <span class="notes">
+								<em class="bg"></em>
+                                    <em class="text">至25集</em>                                                                </span>                               
+								<span class="name">咱们结婚吧</span>
+                            </a>
+                            <p>高圆圆回归银幕挑战恨嫁女</p>
+						</li> 		
+                    <li class="top ">
+                            <a class="img_wrap" title="咱们结婚吧" href="/guochan/zaimenjiehunba/" target="_blank">
+                                <img width="135" height="180" src="http://pica.51rrkan.org/Uploads/vod/2013-11-19/528b2834e4734.jpg" alt="高圆圆回归银幕挑战恨嫁女" onerror="javascript:this.src='/Public/images/nophoto.jpg';">
+                                <span class="notes">
+								<em class="bg"></em>
+                                    <em class="text">至25集</em>                                                                </span>                               
+								<span class="name">咱们结婚吧</span>
+                            </a>
+                            <p>高圆圆回归银幕挑战恨嫁女</p>
+						</li> 		
+                    <li class="top ">
+                            <a class="img_wrap" title="咱们结婚吧" href="/guochan/zaimenjiehunba/" target="_blank">
+                                <img width="135" height="180" src="http://pica.51rrkan.org/Uploads/vod/2013-11-19/528b2834e4734.jpg" alt="高圆圆回归银幕挑战恨嫁女" onerror="javascript:this.src='/Public/images/nophoto.jpg';">
+                                <span class="notes">
+								<em class="bg"></em>
+                                    <em class="text">至25集</em>                                                                </span>                               
+								<span class="name">咱们结婚吧</span>
+                            </a>
+                            <p>高圆圆回归银幕挑战恨嫁女</p>
+						</li> 		
+                    <li class="top ">
+                            <a class="img_wrap" title="咱们结婚吧" href="/guochan/zaimenjiehunba/" target="_blank">
+                                <img width="135" height="180" src="http://pica.51rrkan.org/Uploads/vod/2013-11-19/528b2834e4734.jpg" alt="高圆圆回归银幕挑战恨嫁女" onerror="javascript:this.src='/Public/images/nophoto.jpg';">
+                                <span class="notes">
+								<em class="bg"></em>
+                                    <em class="text">至25集</em>                                                                </span>                               
+								<span class="name">咱们结婚吧</span>
+                            </a>
+                            <p>高圆圆回归银幕挑战恨嫁女</p>
+						</li> 		
+                   
+				</ul>
+		</div>
+		<div class="fix_wth right">
+			<div class="ranklist cm_tab" id="tab_dianshiju">
+				<h5>电视剧排行榜</h5>
+				<div class="hd">
+					<a class="first" href="javascript:;">卫视</a>
+					<a href="javascript:;" class="">美剧</a>
+					<a href="javascript:;" class="">港台</a>
+				</div>
+				<div class="bd">
+					<ul class="tab_item curr">
+                    	<li><span class="right">至1集</span><em class="left top">1</em><a href="/guochan/zaimenjiehunba/" target="_blank">咱们结婚吧</a></li>
+                        <li><span class="right">完结</span><em class="left top">2</em><a href="/guochan/es65842/" target="_blank">二叔</a></li>
+                    </ul>
+                    <ul class="tab_item">
+                    	<li><span class="right">至2集</span><em class="left top">1</em><a href="/guochan/zaimenjiehunba/" target="_blank">咱们结婚吧</a></li>
+                        <li><span class="right">完结</span><em class="left top">2</em><a href="/guochan/es65842/" target="_blank">二叔</a></li>
+                    </ul>
+                    <ul class="tab_item">
+                    	<li><span class="right">至3集</span><em class="left top">1</em><a href="/guochan/zaimenjiehunba/" target="_blank">咱们结婚吧</a></li>
+                        <li><span class="right">完结</span><em class="left top">2</em><a href="/guochan/es65842/" target="_blank">二叔</a></li>
+                    </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+</div>
+<div class="footer container">
+	<p>本网站提供的最新电影，电视剧和动漫资源均系收集于各大视频网站，本网站只提供web页面服务，并不提供影片资源存储，也不参与录制、上传</p>
+	<p>若本站收录的节目无意侵犯了贵司版权，请给网页底部邮箱地址来信，我们会及时处理和回复，谢谢</p>
+	<p>Copyright @2003-2011 XX网 www.XX.com ICP备xxx号</p>
+	<p>
+        <a href="/" title="求片留言">求片留言</a><em>|</em>
+        <a href="/" title="百度影音帮助">百度影音帮助</a><em>|</em>
+        <a href="/" title="网站地图">网站地图</a><em>|</em>
+        <a href="/" title="">百度地图</a><em>|</em>
+        <span>联系我们：xx@gmail.com</span>
+    </p>
+</div>
+    <a onclick="$('html, body').animate({ scrollTop: 0 }, 'slow');" id="btn_back_top">&nbsp;</a>
+    <script src='js/main.js'></script>
+</body>
+</html>
+
